@@ -27,13 +27,13 @@
 | category_id        | integer    | null: false                    |
 | condition_id       | integer    | null: false                    |
 | shipping_fee_id    | integer    | null: false                    |
-| prefecture_id     | integer    | null: false                    |
-| shipping_days_id   | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
+| shipping_day_id    | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 image:ActiveStorageを用いて実装
-ActiveHash: category, condition, shipping_fee, prefecture, shipping_days
+ActiveHash: category, condition, shipping_fee, prefecture, shipping_day
 
 ### Association
 
@@ -58,7 +58,7 @@ ActiveHash: category, condition, shipping_fee, prefecture, shipping_days
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | post_code          | string     | null: false                    |
-| prefecture_id     | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | city               | string     | null: false                    |
 | street             | string     | null: false                    |
 | building           | string     |                                |
