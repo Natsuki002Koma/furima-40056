@@ -4,9 +4,9 @@
 
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
-| name               | string | null: false               |
+| nickname           | string | null: false               |
 | email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
+| password           | string | null: false               |
 | last_name          | string | null: false               |
 | first_name         | string | null: false               |
 | last_name_kana     | string | null: false               |
@@ -30,7 +30,7 @@
 | prefecture_id      | integer    | null: false                    |
 | shipping_day_id    | integer    | null: false                    |
 | price              | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
 
 image:ActiveStorageを用いて実装
 ActiveHash: category, condition, shipping_fee, prefecture, shipping_day
@@ -44,8 +44,8 @@ ActiveHash: category, condition, shipping_fee, prefecture, shipping_day
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| item               | references | null: false, foreign_key: true |
-| user               | references | null: false, foreign_key: true |
+| item_id            | references | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -63,7 +63,7 @@ ActiveHash: category, condition, shipping_fee, prefecture, shipping_day
 | street             | string     | null: false                    |
 | building           | string     |                                |
 | tel                | string     | null: false                    |
-| order              | references | null: false, foreign_key: true |
+| order_id           | references | null: false, foreign_key: true |
 
 ActiveHash: prefectures
 
