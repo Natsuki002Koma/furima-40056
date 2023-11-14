@@ -11,7 +11,7 @@
 | first_name         | string | null: false               |
 | last_name_kana     | string | null: false               |
 | first_name_kana    | string | null: false               |
-| date_of _birth     | date   | null: false               |
+| date_of_birth      | date   | null: false               |
 
 ### Association
 
@@ -24,16 +24,16 @@
 | ------------------ | ---------- | ------------------------------ |
 | item_name          | string     | null: false                    |
 | description        | text       | null: false                    |
-| category           | integer    | null: false                    |
-| condition          | integer    | null: false                    |
-| shipping_fee       | integer    | null: false                    |
-| ship_from          | integer    | null: false                    |
-| shipping_days      | integer    | null: false                    |
+| category_id        | integer    | null: false                    |
+| condition_id       | integer    | null: false                    |
+| shipping_fee_id    | integer    | null: false                    |
+| prefecture_id     | integer    | null: false                    |
+| shipping_days_id   | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 image:ActiveStorageを用いて実装
-ActiveHash: category, condition, shipping_fee, ship_from, shipping_days
+ActiveHash: category, condition, shipping_fee, prefecture, shipping_days
 
 ### Association
 
@@ -58,11 +58,11 @@ ActiveHash: category, condition, shipping_fee, ship_from, shipping_days
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | post_code          | string     | null: false                    |
-| prefectures        | integer    | null: false                    |
+| prefecture_id     | integer    | null: false                    |
 | city               | string     | null: false                    |
 | street             | string     | null: false                    |
 | building           | string     |                                |
-| tel                | integer    | null: false                    |
+| tel                | string     | null: false                    |
 | order              | references | null: false, foreign_key: true |
 
 ActiveHash: prefectures
