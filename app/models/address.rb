@@ -1,4 +1,7 @@
 class Address < ApplicationRecord
+  belongs_to :order
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
 
   validates :post_code, :city, :street, :tel, presence: true
