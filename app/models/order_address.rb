@@ -7,25 +7,16 @@ class OrderAddress
     validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :city
     validates :street
-    validates :validate_tel_number
+    validates :tel, length: { minimum: 10, maximum: 11} , format: { with: /\A[0-9]+\z/,  message:'is invalid. Input only number'}
     validates :item_id
     validates :user_id
     validates :token
   end
 
+ 
   def save
     order = Order.create(item_id:, user_id:)
     Address.create(post_code:, prefecture_id:, city:, street:, building:, tel:,
                    order_id: order.id)
-  end
-
-  private
-
-  def validate_tel_number
-    errors.add(:tel, "can't be blank") if tel.blank?
-    errors.add(:tel, 'is too short') if tel.length < 10
-    return if tel.match?(/\A[0-9]{10,11}\z/)
-
-    errors.add(:tel, 'is invalid. Input only number')
   end
 end
