@@ -6,8 +6,6 @@ FactoryBot.define do
     street { '1-1' }
     building { '東京ハイツ' }
     tel { '09012345678' }
-    association :user
-    association :item
 
     transient do
       dummy_token { 'tok_abcdefghijk00000000000000000' }
