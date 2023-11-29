@@ -10,4 +10,5 @@ function priceCalculation() {
   })
 }
   
-  window.addEventListener('load', priceCalculation)
+  window.addEventListener('turbo:load', priceCalculation)
+  window.addEventListener('turbo:render', priceCalculation);

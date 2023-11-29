@@ -16,8 +16,8 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])
-      render  :index, status: :unprocessable_entity
       gon.public_key = ENV['PAYJP_PUBLIC_KEY']
+      render :index, status: :unprocessable_entity
     end
   end
 
