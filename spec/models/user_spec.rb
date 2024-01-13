@@ -33,6 +33,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
+      it 'hire_dateが空では登録できない' do
+        @user.hire_date = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Hire_date can't be blank")
+      end
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
