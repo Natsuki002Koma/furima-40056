@@ -16,3 +16,4 @@ document.addEventListener('turbo:load', function(){
     console.log("input要素で値の変化が起きました");
   });
 });
+
