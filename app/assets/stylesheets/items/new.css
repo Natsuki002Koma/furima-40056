@@ -90,7 +90,16 @@
 }
 
 /* /商品画像 */
+.previews{
+  background-color: aqua;
+  height: 100px;
+}
 
+.preview-image{
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+}
 /* 商品名と商品説明 */
 .new-items {
   padding: 2vh 0;
